@@ -397,6 +397,10 @@ var Popover = function (_React$Component) {
       this.setState({ exiting: true });
       this.exitingAnimationTimer2 = setTimeout(function () {
         setTimeout(function () {
+          if (!_this2.containerEl) {
+            return;
+          }
+
           _this2.containerEl.style.transform = flowToPopoverTranslations[_this2.zone.flow] + "(" + _this2.zone.order * 50 + "px)";
           _this2.containerEl.style.opacity = "0";
         }, 0);
